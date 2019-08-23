@@ -1,10 +1,16 @@
 exports.config = {
-  tests: './*_test.js',
+  tests: './tests/*_test.js',
   output: './output',
   helpers: {
     WebDriver: {
       url: 'http://localhost',
       browser: 'chrome'
+    }
+  },
+  plugins: {
+    wdio: {
+      enabled: true,
+      services: ['selenium-standalone']
     }
   },
   include: {
@@ -14,3 +20,4 @@ exports.config = {
   mocha: {},
   name: 'csssr'
 }
+
