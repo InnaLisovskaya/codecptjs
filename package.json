@@ -14,6 +14,8 @@
     "webdriverio": "^5.12.4"
   },
   "dependencies": {
-    "@wdio/selenium-standalone-service": "^5.12.1"
+    "@wdio/selenium-standalone-service": "^5.12.1",
+    "mocha-junit-reporter": "^1.23.1",
+    "mochawesome": "^4.1.0"
   }
 }
