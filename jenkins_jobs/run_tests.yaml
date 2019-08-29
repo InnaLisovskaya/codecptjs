@@ -1,0 +1,33 @@
+- job:
+    name: csssr-tests
+    project-type: freestyle
+    defaults: global
+    description: 'inna'
+    disabled: false
+    display-name: 'Bug Tests'
+    concurrent: false
+    logrotate:
+      daysToKeep: 90
+      numToKeep: 90
+      artifactDaysToKeep: -1
+      artifactNumToKeep: -1
+
+    scm:
+      - git:
+         url: https://gitlab.com/InnaLisovskaya/test-qa/
+         branches:
+          - origin/master
+         #credentials-id: "d4af53d7-8f07-4714-b428-8920312f0a16"
+
+    parameters:
+      - choice:
+          name: TEST_SUITE
+#          choices:
+
+          description: "Bugs"
+
+    builders:
+      - shell: |
+          npm install
+          npx codeceptjs run --reporter mochawesome
+
