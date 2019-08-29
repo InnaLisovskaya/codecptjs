@@ -12,5 +12,7 @@ cd test-qa - переходим в папку с проектом
 
 npx codeceptjs run - запускаем тесты
 
+npx codeceptjs run --reporter mochawesome запускаем с отчетом html и скриншотами
+
 
 
